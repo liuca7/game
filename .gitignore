@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# ===== Node.js / Cloudflare Workers =====
+node_modules/
+.wrangler/
+.dev.vars
+dist/
+*.log
