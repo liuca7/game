@@ -21,4 +21,4 @@ assets = { directory = "./public", binding = "ASSETS" }
 [[d1_databases]]
 binding = "DB"
 database_name = "weird-semester"
-database_id = "00000000-0000-0000-0000-000000000000"  # ← 替换为你的真实 database_id
+database_id = "91261288-69f2-4d5d-8a62-0896f7f3309a"  # ← 替换为你的真实 database_id
