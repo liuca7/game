@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="《我的奇葩一学期》网页版 —— 五育并举的校园文字冒险游戏，部署于 Cloudflare Workers 全栈" />
+  <title>我的奇葩一学期 · 网页版</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏫</text></svg>" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- ========== 开始界面 ========== -->
+    <section id="screen-start" class="screen active">
+      <div class="card start-card">
+        <div class="logo">🏫</div>
+        <h1 class="game-title">我的奇葩一学期</h1>
+        <p class="subtitle">五育并举 · 校园随机事件 · 文字冒险</p>
+        <div class="attr-preview">
+          <span>💖 德育</span><span>🧠 智力</span><span>💪 体育</span><span>🎨 美育</span><span>🧹 劳育</span>
+        </div>
+        <input id="name-input" type="text" maxlength="16" placeholder="输入你的昵称（可留空）" autocomplete="off" />
+        <button id="btn-new" class="btn btn-primary">🚀 开始新冒险</button>
+        <button id="btn-continue" class="btn btn-ghost hidden">▶️ 继续上次冒险</button>
+        <button id="btn-clear-save" class="btn-link hidden">放弃存档</button>
+        <p class="start-tip">你将扮演一名小学生，度过 18 周校园生活。属性低于 30 会被勒令休学，休学三次将被开除！</p>
+        <div id="start-leaderboard"></div>
+      </div>
+    </section>
+
+    <!-- ========== 游戏界面 ========== -->
+    <section id="screen-game" class="screen">
+      <header class="game-header">
+        <div class="h-title">🏫 我的奇葩一学期</div>
+        <div class="h-meta">
+          <span id="h-week" class="h-week">第 1 周 · 星期一</span>
+          <span id="h-fortune" class="fortune">今日运势：--</span>
+          <span id="h-suspend" class="h-suspend"></span>
+        </div>
+      </header>
+
+      <div id="attr-bars" class="attr-bars"></div>
+
+      <main id="event-card" class="event-card">
+        <div class="event-inner">
+          <div class="event-scene">🎲</div>
+          <div class="event-title">准备中…</div>
+        </div>
+      </main>
+
+      <details id="log-panel" class="log-panel">
+        <summary>📜 冒险日志</summary>
+        <div id="log-list" class="log-list"></div>
+      </details>
+
+      <footer class="game-footer">
+        <span>作者：刘宸奥</span>
+        <span>Cloudflare Workers 全栈版</span>
+      </footer>
+    </section>
+
+    <!-- ========== 结算界面 ========== -->
+    <section id="screen-end" class="screen">
+      <div class="card end-card">
+        <h2 id="end-title">🎓 学期圆满落幕</h2>
+        <div id="end-stars"></div>
+        <div id="end-bars" class="end-bars"></div>
+        <div id="end-comment" class="end-comment"></div>
+        <div id="end-stats" class="end-stats"></div>
+        <div id="end-leaderboard"></div>
+        <button id="btn-again" class="btn btn-primary">🔄 再来一学期</button>
+        <p class="end-tip">你的成绩已自动提交到云端排行榜 🏆</p>
+      </div>
+    </section>
+
+    <div id="confetti-layer"></div>
+  </div>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/game.js"></script>
+</body>
+</html>
